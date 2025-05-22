@@ -42,7 +42,7 @@ class ColoredBoxWidgetParser extends WidgetParser {
     var realWidget = widget as ColoredBox;
     return <String, dynamic>{
       "type": widgetName,
-      "color": realWidget.color.toARGB32().toRadixString(16),
+      "color": realWidget.color.value.toRadixString(16),
     };
   }
 
