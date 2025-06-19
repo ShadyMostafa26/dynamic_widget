@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:dynamic_widget/dynamic_widget.dart';
+import 'package:dynamic_widget/dynamic_widget/utils.dart';
+import 'package:flutter/material.dart';
 
 class TextFormFieldWidgetParser extends WidgetParser {
   @override
@@ -10,10 +11,10 @@ class TextFormFieldWidgetParser extends WidgetParser {
 
   @override
   Widget parse(
-      Map<String, dynamic> map,
-      BuildContext context,
-      ClickListener? listener,
-      ) {
+    Map<String, dynamic> map,
+    BuildContext buildContext,
+    ClickListener? listener,
+  ) {
     // Build InputDecoration if provided
     InputDecoration? decoration;
     if (map['decoration'] is Map<String, dynamic>) {
@@ -66,7 +67,7 @@ class TextFormFieldWidgetParser extends WidgetParser {
     // We can’t read obscureText/decoration/etc. back out of TextFormField,
     // because those properties aren’t exposed. So we return only the type:
     if (widget is TextFormField) {
-      return <String, dynamic>{ 'type': widgetName };
+      return <String, dynamic>{'type': widgetName};
     }
     return null;
   }
