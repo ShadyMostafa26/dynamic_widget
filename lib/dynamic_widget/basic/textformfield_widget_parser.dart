@@ -113,7 +113,7 @@ class TextFormFieldWidgetParser extends WidgetParser {
           : () => listener?.onClicked(tapEvent),
       onChanged: changeEvent == null
           ? null
-          : (v) => listener?.onClicked(changeEvent),
+          : (v) => listener?.onClicked('$changeEvent:$v'),
     );
   }
 
